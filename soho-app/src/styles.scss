@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Nunito|Nunito+Sans|Playfair+Display&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito|Nunito+Sans|Playfair+Display&display=swap');
+
+// bootstrap theming
+$theme-colors: (
+  'primary': #724cf9,
+);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 html,
 body {
@@ -9,20 +16,22 @@ body {
 }
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: 0.25px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.btn {
-  width: 200px;
-  height: 40px;
+a {
   color: #fff;
-  font-size: 1.25rem;
-  font-weight: 500;
-  border-radius: 4px;
-  background-color: #724cf9;
-  border: 0;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
 }
