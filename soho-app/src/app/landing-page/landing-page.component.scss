@@ -253,6 +253,17 @@ body {
 
     .quote {
       &--text {
+        .left-quote {
+          // display: none;
+          position: absolute;
+          overflow: hidden;
+          margin-left: -2.75rem;
+          margin-top: -2rem;
+          // left: 5%;
+        }
+        // background: url("../../assets/svg/left-quote-1.svg");
+        // background-repeat: no-repeat;
+
         width: 588px;
         height: 130px;
         font-size: 1.125rem;
