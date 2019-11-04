@@ -10,12 +10,11 @@ body {
 .quote,
 .still-thinking {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   color: #fff;
 }
 
 .splash {
-  // position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,10 +23,6 @@ body {
     position: absolute;
     top: 2.5%;
     left: 7.5%;
-    // font-family: 'Nunito', sans-serif;
-    // font-size: 1.5rem;
-    // text-transform: uppercase;
-    // margin: 0;
   }
 
   .content {
@@ -60,7 +55,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-image: linear-gradient(
         118deg,
         rgba(27, 31, 59, 0.75),
@@ -84,11 +79,25 @@ body {
     }
 
     .features {
-      width: 60%;
+      margin: auto;
+      margin-top: 2rem;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 2.5rem;
-      margin: 5% auto auto auto;
+
+      .feature {
+        justify-content: center;
+      }
+
+      @media screen and (min-width: 992px) {
+        width: 70%;
+        margin: auto;
+        margin-top: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+
+        .feature {
+          justify-content: start;
+        }
+      }
     }
 
     .feature {
@@ -139,8 +148,8 @@ body {
   }
 
   &-plan {
-    position: absolute;
-    bottom: -25%;
+    position: relative;
+    top: 150px;
     width: 100%;
 
     display: flex;
@@ -155,15 +164,18 @@ body {
       font-style: normal;
       line-height: normal;
       letter-spacing: normal;
-      margin-bottom: 10%;
+      margin-bottom: 2rem;
     }
 
     .plans {
-      width: calc(100% - 4rem);
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 2rem;
-      margin: auto;
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+
+      @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+      }
     }
 
     .card {
@@ -186,10 +198,6 @@ body {
         text-align: center;
         font-size: 4.6875rem;
         font-weight: 900;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: normal;
-        // letter-spacing: normal;
         margin-bottom: 0;
 
         .currency {
@@ -238,8 +246,6 @@ body {
   align-items: center;
 
   .content {
-    margin-top: 5%;
-
     .title {
       text-align: center;
       font-size: 1.875rem;
@@ -248,21 +254,17 @@ body {
       font-style: normal;
       line-height: normal;
       letter-spacing: normal;
-      margin-bottom: 10%;
+      margin-bottom: 2rem;
     }
 
     .quote {
       &--text {
         .left-quote {
-          // display: none;
           position: absolute;
           overflow: hidden;
           margin-left: -2.75rem;
           margin-top: -2rem;
-          // left: 5%;
         }
-        // background: url("../../assets/svg/left-quote-1.svg");
-        // background-repeat: no-repeat;
 
         width: 588px;
         height: 130px;
@@ -273,7 +275,7 @@ body {
         line-height: normal;
         letter-spacing: 0.08px;
         color: #aaaaaa;
-        margin-bottom: 5%;
+        margin-bottom: 1rem;
       }
 
       &--author {
@@ -293,7 +295,6 @@ body {
   height: 65%;
   background-color: $dark;
   clip-path: polygon(0 14%, 100% 0, 100% 100%, 0% 100%);
-  // clip-path: polygon(0 32%, 100% 19%, 100% 100%, 0% 100%);
 
   display: flex;
   justify-content: center;
