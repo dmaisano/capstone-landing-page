@@ -17,13 +17,9 @@
       and more.
     </p>
 
-    <button
-      [ngx-scroll-to]="premiumPlansRef"
-      [ngx-scroll-to-offset]="-400"
-      class="btn btn-primary"
-    >
+    <a href="#premium-plan" class="btn btn-primary">
       Let's Start
-    </button>
+    </a>
   </div>
 </div>
 
@@ -69,7 +65,7 @@
         </p>
       </div>
     </div>
-    <div class="feature">
+    <div id="premium-plan" class="feature">
       <img src="../../assets/svg/wallet-4.svg" alt="wallet" />
       <div>
         <h2 class="feature--title">
@@ -83,7 +79,7 @@
     </div>
   </div>
 
-  <div class="premium-plan">
+  <div class="premium-plan" #premiumPlansRef>
     <div class="content">
       <h2>Select Your Plan</h2>
 
@@ -99,7 +95,9 @@
               Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
               similique ne nec, eius eruditi fierent
             </p>
-            <a href="#linkToStripe" class="btn btn-primary">Select Plan</a>
+            <button (click)="checkout('monthly')" class="btn btn-primary">
+              Select Plan
+            </button>
           </div>
         </div>
         <div class="card">
@@ -113,7 +111,9 @@
               Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
               similique ne nec, eius eruditi fierent
             </p>
-            <a href="#linkToStripe" class="btn btn-primary">Select Plan</a>
+            <button (click)="checkout('yearly')" class="btn btn-primary">
+              Select Plan
+            </button>
           </div>
         </div>
       </section>
@@ -121,7 +121,7 @@
   </div>
 </div>
 
-<div class="quote" #premiumPlansRef>
+<div class="quote">
   <div class="content">
     <div class="title">What Our Premium Customers Say</div>
     <p class="quote--text">
@@ -141,22 +141,14 @@
     <div class="title">Still Thinking?</div>
     <p>
       Don't waste your time - Get
-      <span
-        [ngx-scroll-to]="premiumPlansRef"
-        [ngx-scroll-to-offset]="-400"
-        class="text-primary"
-      >
+      <a href="premium-plan" class="text-primary">
         Premium!
-      </span>
+      </a>
     </p>
 
-    <button
-      [ngx-scroll-to]="premiumPlansRef"
-      [ngx-scroll-to-offset]="-400"
-      class="btn btn-primary"
-    >
+    <a href="premium-plan" class="btn btn-primary">
       Start Right Now
-    </button>
+    </a>
   </div>
 </div>
 
