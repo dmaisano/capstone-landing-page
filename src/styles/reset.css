@@ -1,0 +1,23 @@
+/* https://dev.to/hzburki/100-height-to-all-divs-gatsby-33nd */
+
+/*
+ * Purpose:
+ * Assign height: "100%" to
+ * html, body, #___gatsby &
+ * div with role="group"
+*/
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+body {
+  @apply font-sans;
+  margin: 0px;
+}
+
+div[role="group"][tabindex] {
+  height: 100%;
+}
