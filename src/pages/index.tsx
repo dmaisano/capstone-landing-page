@@ -2,13 +2,14 @@ import { PageProps } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Button from "../components/button";
 import Section from "../components/section";
+import SEO from "../components/seo";
+import useSiteMetadata from "../hooks/use-site-metadata";
 // @ts-ignore
-import splashSmall from "../static/splash_small.jpg";
+import splashLarge from "../images/splash.jpg";
 // @ts-ignore
-import splashMedium from "../static/splash_medium.jpg";
+import splashMedium from "../images/splash_medium.jpg";
 // @ts-ignore
-import splashLarge from "../static/splash.jpg";
-
+import splashSmall from "../images/splash_small.jpg";
 import "./index.css";
 
 type IndexProps = {};
@@ -33,6 +34,8 @@ const IndexPage: React.FC<PageProps<IndexProps>> = ({}) => {
 
   return (
     <main id="splash" className="h-full">
+      <SEO />
+
       <Section id="section">
         <div
           className="bg h-full w-full absolute top-0 left-0 opacity-100 md:opacity-0"

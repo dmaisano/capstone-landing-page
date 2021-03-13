@@ -1,3 +1,7 @@
+button {
+  user-select: none;
+}
+
 button,
 button:hover,
 button:focus,

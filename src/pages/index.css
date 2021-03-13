@@ -1,7 +1,6 @@
 #splash .bg {
   z-index: -1;
   background-size: cover;
-  filter: drop-shadow(4px 4px 10px blue) blur(3px);
 }
 
 #splash #branding h2,
