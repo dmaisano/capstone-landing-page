@@ -1,5 +1,24 @@
 #features {
+  /* display: block; */
+  justify-content: start;
   background: linear-gradient(to top, #3a426d, #1b1f3b);
+}
+
+#features #features-grid > div {
+  @apply flex flex-col items-center mx-auto mb-8;
+  /* max-width: 75%; */
+}
+
+#features #features-grid svg {
+  @apply mb-2;
+}
+
+#features #features-grid h2 {
+  @apply font-semibold text-xl mb-2;
+}
+
+#features #features-grid p {
+  @apply text-gray-200 text-center md:text-left;
 }
 
 @media (min-width: 768px) {

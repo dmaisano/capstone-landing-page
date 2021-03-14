@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../button";
-import Section from "../section";
 import "./splash.css";
 
 interface SpashProps {
@@ -18,7 +17,10 @@ const Splash: React.FC<SpashProps> = ({ images }) => {
   console.log(images);
 
   return (
-    <Section id="splash">
+    <section
+      id="splash"
+      className="relative min-h-full flex flex-col items-center justify-center"
+    >
       <div
         className="bg h-full w-full absolute top-0 left-0 block md:hidden"
         style={{ backgroundImage: backgroundImage(images.splash_small) }}
@@ -31,21 +33,6 @@ const Splash: React.FC<SpashProps> = ({ images }) => {
         className="bg h-full w-full absolute top-0 left-0 hidden lg:block"
         style={{ backgroundImage: backgroundImage(images.splash_large) }}
       />
-      {/* <div
-        className="bg h-full w-full absolute top-0 left-0 opacity-100 md:opacity-0"
-        style={{ backgroundImage: backgroundImage(images.splash_small) }}
-      />
-
-      <div
-        className="bg h-full w-full absolute top-0 left-0 opacity-0 md:opacity-100 lg:opacity-0"
-        style={{ backgroundImage: backgroundImage(images.splash_medium) }}
-      />
-
-      <div
-        className="bg h-full w-full absolute top-0 left-0 opacity-0 lg:opacity-100"
-        style={{ backgroundImage: backgroundImage(images.splash_large) }}
-      /> */}
-
       <h1 className="w-full tracking-widest font-light text-white text-2xl flex justify-center md:justify-start absolute top-0 left-0 py-12 md:p-6">
         SOHOMUSE
       </h1>
@@ -67,7 +54,7 @@ const Splash: React.FC<SpashProps> = ({ images }) => {
           <Button>Let's Start</Button>
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
 

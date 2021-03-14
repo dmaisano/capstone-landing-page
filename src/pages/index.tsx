@@ -1,7 +1,6 @@
 import { graphql, PageProps } from "gatsby";
 import React, { useEffect, useState } from "react";
-import Features from "../components/features/features";
-import Section from "../components/section";
+import Features from "../components/features";
 import SEO from "../components/seo";
 import Splash from "../components/splash";
 
