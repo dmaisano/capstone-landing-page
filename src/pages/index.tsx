@@ -1,81 +1,65 @@
-import { PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import React, { useEffect, useState } from "react";
-import Button from "../components/button";
+import Features from "../components/features/features";
 import Section from "../components/section";
 import SEO from "../components/seo";
-import useSiteMetadata from "../hooks/use-site-metadata";
-// @ts-ignore
-import splashLarge from "../images/splash.jpg";
-// @ts-ignore
-import splashMedium from "../images/splash_medium.jpg";
-// @ts-ignore
-import splashSmall from "../images/splash_small.jpg";
-import "./index.css";
+import Splash from "../components/splash";
 
-type IndexProps = {};
+type IndexContext = {
+  allFile: {
+    nodes: {
+      childImageSharp: {
+        fluid: {
+          src: string;
+          originalName: string;
+        };
+      };
+    }[];
+  };
+};
 
-const IndexPage: React.FC<PageProps<IndexProps>> = ({}) => {
+const IndexPage: React.FC<PageProps<IndexContext>> = ({ data }) => {
   const [state, setState] = useState({
-    width: window.innerWidth,
+    images: { splash_small: "", splash_medium: "", splash_large: "" },
   });
 
-  const onResize = () => {
-    setState({ ...state, width: window.innerWidth });
-  };
-
-  const backgroundImage = (image) =>
-    `linear-gradient(118deg, rgba(27, 31, 59, 0.75), rgba(90, 56, 211, 0.5)), url(${image})`;
-
   useEffect(() => {
-    window.addEventListener(`resize`, onResize);
+    let images = { splash_small: "", splash_medium: "", splash_large: "" };
+    data.allFile.nodes.forEach((file) => {
+      const { src, originalName } = file.childImageSharp.fluid;
+      const match = originalName.match(/(\w+)\.jpg/);
+      const fileName = match?.[1];
+      images[fileName as any] = src;
+    });
 
-    return () => window.removeEventListener(`resize`, onResize);
+    setState({
+      ...state,
+      images,
+    });
   }, []);
 
   return (
-    <main id="splash" className="h-full">
+    <main className="h-full">
       <SEO />
-
-      <Section id="section">
-        <div
-          className="bg h-full w-full absolute top-0 left-0 opacity-100 md:opacity-0"
-          style={{ backgroundImage: backgroundImage(splashSmall) }}
-        />
-
-        <div
-          className="bg h-full w-full absolute top-0 left-0 opacity-0 md:opacity-100 lg:opacity-0"
-          style={{ backgroundImage: backgroundImage(splashMedium) }}
-        />
-
-        <div
-          className="bg h-full w-full absolute top-0 left-0 opacity-0 lg:opacity-100"
-          style={{ backgroundImage: backgroundImage(splashLarge) }}
-        />
-
-        <h1 className="w-full tracking-widest font-light text-white text-2xl flex justify-center md:justify-start absolute top-0 left-0 py-12 md:p-6">
-          SOHOMUSE
-        </h1>
-        <div id="branding" className="mx-auto">
-          <h2
-            className="text-white text-4xl text-center mb-10"
-            style={{
-              fontFamily: "Playfair Display",
-            }}
-          >
-            Book World-Class Talent
-          </h2>
-          <p className="text-gray-200 text-lg text-center mb-10">
-            Premium members get access to a world-class talent pool of
-            professional talent for your next project. Our talent has won
-            academy awards, grammy's and more.
-          </p>
-          <div className="flex justify-center">
-            <Button>Let's Start</Button>
-          </div>
-        </div>
-      </Section>
+      <Splash images={{ ...state.images }} />
+      <Features />
     </main>
   );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query SplashImagesQuery {
+    allFile(filter: { name: { regex: "/^splash.+/" } }) {
+      nodes {
+        childImageSharp {
+          fluid {
+            src
+            originalName
+          }
+        }
+      }
+    }
+  }
+`;

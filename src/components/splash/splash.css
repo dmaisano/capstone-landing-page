@@ -1,0 +1,25 @@
+#splash .bg {
+  z-index: -1;
+  background-size: cover;
+}
+
+#splash #branding h2,
+#splash #branding p {
+  mix-blend-mode: luminosity;
+}
+
+#splash #branding {
+  max-width: 80%;
+}
+
+@media (min-width: 768px) {
+  #splash #branding {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #splash #branding {
+    max-width: 768px;
+  }
+}

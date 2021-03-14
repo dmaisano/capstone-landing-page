@@ -27,7 +27,7 @@ const useSiteMetadata = () => {
           description
         }
       }
-      fileName: file(relativePath: { eq: "splash.jpg" }) {
+      fileName: file(relativePath: { eq: "splash_large.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 400, maxHeight: 250) {
             src
