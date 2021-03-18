@@ -1,0 +1,20 @@
+#quote {
+  background: #201f2d;
+}
+
+#quote #container {
+  width: 58.33%;
+}
+
+@media (min-width: 768px) {
+  #quote #container {
+    width: 600px;
+  }
+
+  #quote #container p:last-child::before {
+    content: "-";
+  }
+}
+
+@media (min-width: 1024px) {
+}

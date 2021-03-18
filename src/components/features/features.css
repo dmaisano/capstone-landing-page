@@ -1,12 +1,10 @@
 #features {
-  /* display: block; */
   justify-content: start;
   background: linear-gradient(to top, #3a426d, #1b1f3b);
 }
 
 #features #features-grid > div {
   @apply flex flex-col items-center mx-auto mb-8;
-  /* max-width: 75%; */
 }
 
 #features #features-grid svg {
@@ -14,7 +12,7 @@
 }
 
 #features #features-grid h2 {
-  @apply font-semibold text-xl mb-2;
+  @apply font-semibold text-xl text-center mb-2;
 }
 
 #features #features-grid p {
@@ -22,6 +20,19 @@
 }
 
 @media (min-width: 768px) {
+  #features {
+    justify-content: center;
+  }
+
+  #features #features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  #features #payment {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 @media (min-width: 1024px) {

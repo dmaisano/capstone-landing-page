@@ -1,6 +1,7 @@
 import { graphql, PageProps } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Features from "../components/features";
+import Quote from "../components/quote";
 import SEO from "../components/seo";
 import Splash from "../components/splash";
 
@@ -42,6 +43,7 @@ const IndexPage: React.FC<PageProps<IndexContext>> = ({ data }) => {
       <SEO />
       <Splash images={{ ...state.images }} />
       <Features />
+      <Quote />
     </main>
   );
 };

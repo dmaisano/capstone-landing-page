@@ -7,9 +7,9 @@ const Features: React.FC<FeaturesProps> = ({}) => {
   return (
     <section
       id="features"
-      className="relative md:h-full flex flex-col items-center justify-center py-8 px-12 md:p-0"
+      className="relative min-h-full flex flex-col md:items-center md:justify-center py-8 px-12 md:p-0"
     >
-      <h2 className="relative md:absolute md:top-0 mb-12 md:mb-0 text-white text-center text-3xl md:text-4xl">
+      <h2 className="relative md:absolute md:top-0 md:py-8 mb-12 md:mb-0 text-white text-center text-3xl md:text-4xl">
         Premium Features
       </h2>
 
@@ -126,6 +126,10 @@ const Features: React.FC<FeaturesProps> = ({}) => {
             similique ne nec, eius eruditi
           </p>
         </div>
+      </div>
+
+      <div id="payment">
+        <h2 className="text-3xl text-center">Select Your Plan</h2>
       </div>
     </section>
   );

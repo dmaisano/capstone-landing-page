@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import "./reset.css";
+
+body {
+  @apply text-white;
+}
