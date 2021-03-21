@@ -3,7 +3,7 @@
   background: linear-gradient(to top, #3a426d, #1b1f3b);
 }
 
-#features #features-grid > div {
+#features #features-grid > #feature-item {
   @apply flex flex-col items-center mx-auto mb-8;
 }
 
@@ -19,6 +19,36 @@
   @apply text-gray-200 text-center md:text-left;
 }
 
+#features #payment-options .card {
+  @apply relative bg-white flex flex-col items-center justify-center;
+  background-clip: border-box;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  color: #1b1f3b;
+}
+
+#features #payment-options .card .card-content {
+  @apply p-6 mx-auto text-center;
+}
+
+#features #payment-options .card .card-title {
+  @apply text-5xl font-bold;
+}
+
+#features #payment-options .card .card-title::before {
+  @apply text-primary text-3xl;
+  content: "$";
+  vertical-align: super;
+}
+
+#features #payment-options .card .card-subtitle {
+  @apply text-xl mb-3;
+}
+
+#features #payment-options .card .card-text {
+  color: #6d6f78;
+}
+
 @media (min-width: 768px) {
   #features {
     justify-content: center;
@@ -29,7 +59,7 @@
     gap: 4rem;
   }
 
-  #features #payment {
+  #features #payment-options {
     position: absolute;
     bottom: 0;
   }

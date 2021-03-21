@@ -51,7 +51,7 @@ const Splash: React.FC<SpashProps> = ({ images }) => {
           awards, grammy's and more.
         </p>
         <div className="flex justify-center">
-          <Button>Let's Start</Button>
+          <Button className="w-52">Let's Start</Button>
         </div>
       </div>
     </section>

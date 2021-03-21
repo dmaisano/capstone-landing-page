@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../button";
 import "./features.css";
 
 interface FeaturesProps {}
@@ -14,7 +15,7 @@ const Features: React.FC<FeaturesProps> = ({}) => {
       </h2>
 
       <div id="features-grid" className="block md:grid text-white">
-        <div>
+        <div id="feature-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75">
             <g fill="none">
               <path
@@ -37,7 +38,7 @@ const Features: React.FC<FeaturesProps> = ({}) => {
             similique ne nec, eius eruditi
           </p>
         </div>
-        <div>
+        <div id="feature-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="74" height="75">
             <g fill="none">
               <path
@@ -64,7 +65,7 @@ const Features: React.FC<FeaturesProps> = ({}) => {
             similique ne nec, eius eruditi
           </p>
         </div>
-        <div>
+        <div id="feature-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="59" height="85">
             <g fill="none">
               <path
@@ -95,7 +96,7 @@ const Features: React.FC<FeaturesProps> = ({}) => {
             similique ne nec, eius eruditi
           </p>
         </div>
-        <div>
+        <div id="feature-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="59" height="85">
             <g fill="none">
               <path
@@ -128,8 +129,34 @@ const Features: React.FC<FeaturesProps> = ({}) => {
         </div>
       </div>
 
-      <div id="payment">
-        <h2 className="text-3xl text-center">Select Your Plan</h2>
+      <div id="payment-options">
+        <h2 className="text-3xl text-center mb-4 md:mb-0">Select Your Plan</h2>
+        <div className="card mb-6">
+          <div className="card-content">
+            <div className="card-title">9.99</div>
+            <div className="card-subtitle">per month</div>
+            <p className="card-text mb-6">
+              Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
+              similique ne nec, eius eruditi fierent
+            </p>
+            <div>
+              <Button>Select Plan</Button>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-content">
+            <div className="card-title">99.99</div>
+            <div className="card-subtitle">per year</div>
+            <p className="card-text mb-6">
+              Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
+              similique ne nec, eius eruditi fierent
+            </p>
+            <div>
+              <Button>Select Plan</Button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
