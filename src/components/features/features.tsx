@@ -35,7 +35,9 @@ const Features: React.FC<FeaturesProps> = ({}) => {
               />
             </g>
           </svg>
-          <h2>Paywall Management</h2>
+          <h4 className="font-semibold text-xl pt-2 pb-4">
+            Paywall Management
+          </h4>
           <p>
             Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
             similique ne nec, eius eruditi
@@ -62,7 +64,9 @@ const Features: React.FC<FeaturesProps> = ({}) => {
               />
             </g>
           </svg>
-          <h2>World-Class Awarded Talents</h2>
+          <h4 className="font-semibold text-xl pb-2">
+            World-Class Awarded Talents
+          </h4>
           <p>
             Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
             similique ne nec, eius eruditi
@@ -93,7 +97,9 @@ const Features: React.FC<FeaturesProps> = ({}) => {
               />
             </g>
           </svg>
-          <h2>Monetization of Content</h2>
+          <h4 className="font-semibold text-xl pb-2">
+            Monetization of Content
+          </h4>
           <p>
             Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
             similique ne nec, eius eruditi
@@ -124,7 +130,7 @@ const Features: React.FC<FeaturesProps> = ({}) => {
               />
             </g>
           </svg>
-          <h2>E-Wallet</h2>
+          <h4 className="font-semibold text-xl pb-2">E-Wallet</h4>
           <p>
             Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
             similique ne nec, eius eruditi

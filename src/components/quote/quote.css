@@ -1,9 +1,15 @@
-#quote {
-  background: #201f2d;
+#still-thinking {
+  background: #242333;
+  clip-path: polygon(0 14%, 100% 0, 100% 100%, 0% 100%);
 }
 
 #quote #container {
-  width: 58.33%;
+  width: 75%;
+}
+
+#still-thinking #container {
+  width: 100%;
+  padding: 0 2rem;
 }
 
 @media (min-width: 768px) {
