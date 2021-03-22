@@ -20,7 +20,7 @@
 }
 
 #features #payment-options .card {
-  @apply relative bg-white flex flex-col items-center justify-center;
+  @apply relative bg-white h-full flex flex-col items-center justify-center;
   background-clip: border-box;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -28,21 +28,21 @@
 }
 
 #features #payment-options .card .card-content {
-  @apply p-6 mx-auto text-center;
+  @apply p-6 lg:p-8 mx-auto text-center;
 }
 
 #features #payment-options .card .card-title {
-  @apply text-5xl font-bold;
+  @apply text-5xl lg:text-7xl font-bold;
 }
 
 #features #payment-options .card .card-title::before {
-  @apply text-primary text-3xl;
+  @apply text-primary text-3xl lg:text-4xl;
   content: "$";
   vertical-align: super;
 }
 
 #features #payment-options .card .card-subtitle {
-  @apply text-xl mb-3;
+  @apply text-xl lg:text-3xl mb-3 lg:mb-5;
 }
 
 #features #payment-options .card .card-text {
@@ -60,10 +60,31 @@
   }
 
   #features #payment-options {
-    position: absolute;
-    bottom: 0;
+    @apply mb-8;
+  }
+
+  #features #payment-options #payment-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    column-gap: 2.5rem;
+    grid-auto-flow: column;
+  }
+
+  #features #payment-options .card {
+    width: 75%;
+  }
+
+  #features #payment-options .card:first-child {
+    margin-left: auto;
+  }
+
+  #features #payment-options .card:last-child {
+    margin-right: auto;
   }
 }
 
 @media (min-width: 1024px) {
+  #features #payment-options .card {
+    /* max-width: 350px; */
+  }
 }

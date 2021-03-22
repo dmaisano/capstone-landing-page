@@ -8,13 +8,16 @@ const Features: React.FC<FeaturesProps> = ({}) => {
   return (
     <section
       id="features"
-      className="relative min-h-full flex flex-col md:items-center md:justify-center py-8 px-12 md:p-0"
+      className="relative min-h-full flex flex-col md:items-center py-8 px-12 md:p-0"
     >
-      <h2 className="relative md:absolute md:top-0 md:py-8 mb-12 md:mb-0 text-white text-center text-3xl md:text-4xl">
+      <h2 className="relative md:py-8 md:mb-8 text-white text-center text-3xl md:text-4xl">
         Premium Features
       </h2>
 
-      <div id="features-grid" className="block md:grid text-white">
+      <div
+        id="features-grid"
+        className="block md:grid text-white md:px-8 md:mb-8"
+      >
         <div id="feature-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75">
             <g fill="none">
@@ -130,30 +133,32 @@ const Features: React.FC<FeaturesProps> = ({}) => {
       </div>
 
       <div id="payment-options">
-        <h2 className="text-3xl text-center mb-4 md:mb-0">Select Your Plan</h2>
-        <div className="card mb-6">
-          <div className="card-content">
-            <div className="card-title">9.99</div>
-            <div className="card-subtitle">per month</div>
-            <p className="card-text mb-6">
-              Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
-              similique ne nec, eius eruditi fierent
-            </p>
-            <div>
-              <Button>Select Plan</Button>
+        <h2 className="text-3xl text-center mb-4">Select Your Plan</h2>
+        <div id="payment-cards" className="">
+          <div className="card mb-6">
+            <div className="card-content">
+              <div className="card-title">9.99</div>
+              <div className="card-subtitle">per month</div>
+              <p className="card-text mb-6">
+                Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
+                similique ne nec, eius eruditi fierent
+              </p>
+              <div>
+                <Button>Select Plan</Button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="card">
-          <div className="card-content">
-            <div className="card-title">99.99</div>
-            <div className="card-subtitle">per year</div>
-            <p className="card-text mb-6">
-              Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
-              similique ne nec, eius eruditi fierent
-            </p>
-            <div>
-              <Button>Select Plan</Button>
+          <div className="card">
+            <div className="card-content">
+              <div className="card-title">99.99</div>
+              <div className="card-subtitle">per year</div>
+              <p className="card-text mb-6">
+                Lorem ipsum dolor sit amet, augue delectus cum ne, mazim numquam
+                similique ne nec, eius eruditi fierent
+              </p>
+              <div>
+                <Button>Select Plan</Button>
+              </div>
             </div>
           </div>
         </div>
