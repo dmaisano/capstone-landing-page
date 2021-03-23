@@ -14,8 +14,6 @@ const Splash: React.FC<SpashProps> = ({ images }) => {
   const backgroundImage = (image) =>
     `linear-gradient(118deg, rgba(27, 31, 59, 0.75), rgba(90, 56, 211, 0.5)), url(${image})`;
 
-  console.log(images);
-
   return (
     <section
       id="splash"

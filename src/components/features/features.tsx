@@ -2,9 +2,12 @@ import React from "react";
 import Button from "../button";
 import "./features.css";
 
-interface FeaturesProps {}
+interface FeaturesProps {
+  priceIDs: string[];
+  handleCheckout: (priceID: string) => Promise<void>;
+}
 
-const Features: React.FC<FeaturesProps> = ({}) => {
+const Features: React.FC<FeaturesProps> = ({ priceIDs, handleCheckout }) => {
   return (
     <section
       id="features"
@@ -150,7 +153,9 @@ const Features: React.FC<FeaturesProps> = ({}) => {
                 similique ne nec, eius eruditi fierent
               </p>
               <div>
-                <Button>Select Plan</Button>
+                <Button onClick={() => handleCheckout(priceIDs[0])}>
+                  Select Plan
+                </Button>
               </div>
             </div>
           </div>
@@ -163,7 +168,9 @@ const Features: React.FC<FeaturesProps> = ({}) => {
                 similique ne nec, eius eruditi fierent
               </p>
               <div>
-                <Button>Select Plan</Button>
+                <Button onClick={() => handleCheckout(priceIDs[1])}>
+                  Select Plan
+                </Button>
               </div>
             </div>
           </div>
