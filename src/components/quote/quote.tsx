@@ -2,9 +2,11 @@ import React from "react";
 import Button from "../button";
 import "./quote.css";
 
-interface QuoteProps {}
+interface QuoteProps {
+  scrollToCheckout: () => void;
+}
 
-const Quote: React.FC<QuoteProps> = ({}) => {
+const Quote: React.FC<QuoteProps> = ({ scrollToCheckout }) => {
   return (
     <>
       <section
@@ -54,7 +56,9 @@ const Quote: React.FC<QuoteProps> = ({}) => {
               Premium!
             </span>
           </p>
-          <Button className="w-52">Start Right Now</Button>
+          <Button onClick={scrollToCheckout} className="w-52">
+            Start Right Now
+          </Button>
         </div>
       </section>
     </>

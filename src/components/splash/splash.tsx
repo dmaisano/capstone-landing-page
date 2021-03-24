@@ -3,6 +3,7 @@ import Button from "../button";
 import "./splash.css";
 
 interface SpashProps {
+  scrollToCheckout: () => void;
   images: {
     splash_small: string;
     splash_medium: string;
@@ -10,7 +11,7 @@ interface SpashProps {
   };
 }
 
-const Splash: React.FC<SpashProps> = ({ images }) => {
+const Splash: React.FC<SpashProps> = ({ images, scrollToCheckout }) => {
   const backgroundImage = (image) =>
     `linear-gradient(118deg, rgba(27, 31, 59, 0.75), rgba(90, 56, 211, 0.5)), url(${image})`;
 
@@ -49,7 +50,9 @@ const Splash: React.FC<SpashProps> = ({ images }) => {
           awards, grammy's and more.
         </p>
         <div className="flex justify-center">
-          <Button className="w-52">Let's Start</Button>
+          <Button onClick={scrollToCheckout} className="w-52">
+            Let's Start
+          </Button>
         </div>
       </div>
     </section>

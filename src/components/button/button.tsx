@@ -1,7 +1,7 @@
 import React from "react";
 import "./button.css";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button: React.FC<ButtonProps> = (props) => {
   let className: string = "";

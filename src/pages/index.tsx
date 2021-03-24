@@ -1,11 +1,11 @@
+import { loadStripe } from "@stripe/stripe-js";
 import { graphql, PageProps } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Features from "../components/features";
 import Footer from "../components/footer";
 import Quote from "../components/quote";
 import SEO from "../components/seo";
 import Splash from "../components/splash";
-import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_API_KEY || "");
 const priceIDs = (process.env.GATSBY_STRIPE_PRICE_IDS || "").split(",");
@@ -30,7 +30,7 @@ type IndexStateType = {
 };
 
 const IndexPage: React.FC<PageProps<IndexContext>> = ({ data }) => {
-  console.log(priceIDs);
+  const checkoutRef = useRef<HTMLDivElement>(null);
 
   const [state, setState] = useState<IndexStateType>({
     images: { splash_small: "", splash_medium: "", splash_large: "" },
@@ -75,12 +75,30 @@ const IndexPage: React.FC<PageProps<IndexContext>> = ({ data }) => {
     }
   };
 
+  const scrollToCheckout = () => {
+    if (checkoutRef.current) {
+      checkoutRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  };
+
   return (
     <main className="h-full">
       <SEO />
-      <Splash images={{ ...state.images }} />
-      <Features handleCheckout={handleCheckout} priceIDs={priceIDs} />
-      <Quote />
+      <Splash
+        images={{ ...state.images }}
+        scrollToCheckout={scrollToCheckout}
+      />
+      <Features
+        handleCheckout={handleCheckout}
+        loading={state.loading}
+        priceIDs={priceIDs}
+        checkoutRef={checkoutRef}
+      />
+      <Quote scrollToCheckout={scrollToCheckout} />
       <Footer />
     </main>
   );

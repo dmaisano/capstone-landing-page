@@ -3,11 +3,18 @@ import Button from "../button";
 import "./features.css";
 
 interface FeaturesProps {
+  checkoutRef: React.RefObject<HTMLDivElement>;
+  loading: boolean;
   priceIDs: string[];
   handleCheckout: (priceID: string) => Promise<void>;
 }
 
-const Features: React.FC<FeaturesProps> = ({ priceIDs, handleCheckout }) => {
+const Features: React.FC<FeaturesProps> = ({
+  checkoutRef,
+  loading,
+  priceIDs,
+  handleCheckout,
+}) => {
   return (
     <section
       id="features"
@@ -141,9 +148,9 @@ const Features: React.FC<FeaturesProps> = ({ priceIDs, handleCheckout }) => {
         </div>
       </div>
 
-      <div id="payment-options">
+      <div ref={checkoutRef} id="payment-options">
         <h2 className="text-3xl text-center mb-4">Select Your Plan</h2>
-        <div id="payment-cards" className="">
+        <div id="payment-cards">
           <div className="card mb-6">
             <div className="card-content">
               <div className="card-title">9.99</div>
@@ -153,7 +160,10 @@ const Features: React.FC<FeaturesProps> = ({ priceIDs, handleCheckout }) => {
                 similique ne nec, eius eruditi fierent
               </p>
               <div>
-                <Button onClick={() => handleCheckout(priceIDs[0])}>
+                <Button
+                  disabled={loading}
+                  onClick={() => handleCheckout(priceIDs[0])}
+                >
                   Select Plan
                 </Button>
               </div>
@@ -168,7 +178,10 @@ const Features: React.FC<FeaturesProps> = ({ priceIDs, handleCheckout }) => {
                 similique ne nec, eius eruditi fierent
               </p>
               <div>
-                <Button onClick={() => handleCheckout(priceIDs[1])}>
+                <Button
+                  disabled={loading}
+                  onClick={() => handleCheckout(priceIDs[1])}
+                >
                   Select Plan
                 </Button>
               </div>
