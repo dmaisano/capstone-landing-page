@@ -33,7 +33,7 @@ const Splash: React.FC<SpashProps> = ({ images, scrollToCheckout }) => {
         style={{ backgroundImage: backgroundImage(images.splash_large) }}
       />
       <h1 className="w-full tracking-widest font-light text-white text-2xl flex justify-center md:justify-start absolute top-0 left-0 py-12 md:p-6">
-        SOHOMUSE
+        INSERT COMPANY
       </h1>
       <div id="branding" className="mx-auto">
         <h2

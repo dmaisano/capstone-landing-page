@@ -52,7 +52,10 @@ const Quote: React.FC<QuoteProps> = ({ scrollToCheckout }) => {
           <h2 className="text-4xl mb-4">Still Thinking?</h2>
           <p className="text-xl mb-4">
             Don't waste your time - Get{" "}
-            <span className="cursor-pointer text-primary font-bold">
+            <span
+              onClick={scrollToCheckout}
+              className="cursor-pointer text-primary font-bold"
+            >
               Premium!
             </span>
           </p>

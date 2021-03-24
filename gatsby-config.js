@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "SohoMuse Capstone",
+    title: "NJIT Senior Capstone",
     description: "NJIT Capstone Project",
   },
   plugins: [
